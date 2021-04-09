@@ -18,5 +18,7 @@ services:
       MYSQL_PASSWORD: util-pw
       MYSQL_DATABASE: util-bot
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+       - ./data/mysql:/var/lib/mysql:rw,delegated
     command: --default-authentication-plugin=mysql_native_password
     restart: unless-stopped
