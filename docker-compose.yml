@@ -1,0 +1,22 @@
+version: "3"
+services:
+  util-bot:
+    container_name: util-bot_app
+    build: .
+    image: util_bot
+    volumes:
+      - "./config.properties:/app/application.properties"
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+
+  db:
+    image: mysql
+    container_name: util-bot_db
+    environment:
+      MYSQL_USER: util-bot
+      MYSQL_PASSWORD: util-pw
+      MYSQL_DATABASE: util-bot
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
