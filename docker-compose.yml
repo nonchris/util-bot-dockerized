@@ -6,6 +6,11 @@ services:
     image: util_bot
     volumes:
       - "./application.properties:/application.properties"
+    environment:
+      MYSQL_DATABASE: util-bot
+      MYSQL_USER: util-bot
+      MYSQL_PASSWORD: util-pw
+      TOKEN: 
     stdin_open: true
     tty: true
     restart: unless-stopped
