@@ -1,0 +1,34 @@
+---
+kind: pipeline
+name: default
+type: docker
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: push docker image
+  image: plugins/docker
+  settings:
+    tags: latest
+    squash: true
+    pull_image: true
+    compress: true
+    no_cache: true
+    experimental: true
+    dockerfile: Dockerfile
+    context: .
+    repo: nonchris/util-bot
+    username:
+      from_secret: DOCKER_USERNAME
+    password:
+      from_secret: DOCKER_PASSWORD
+    auto_tag: true
+  when:
+    branch:
+    - main
+    event:
+    - push
+    - tag
+    - cron
