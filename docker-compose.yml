@@ -4,8 +4,6 @@ services:
     container_name: util-bot_app
     build: .
     image: util_bot
-    volumes:
-      - "./application.properties:/application.properties"
     environment:
       MYSQL_DATABASE: util-bot
       MYSQL_USER: util-bot
