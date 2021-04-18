@@ -11,7 +11,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     git clone https://github.com/n1ck-i/util-bot.git /app && \
     cd /app && \
     git checkout 1595700 && \
-    mvn clean package -e
+    mvn clean package -e -DskipTests
 
 WORKDIR /app
 
