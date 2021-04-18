@@ -8,9 +8,9 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     git \
     openjdk-15-jdk-headless \
     maven && \
-    git clone https://github.com/nonchris/util-bot.git /app && \
+    git clone https://github.com/n1ck-i/util-bot.git /app && \
     cd /app && \
-    git checkout 7cd8209 && \
+    git checkout 1595700 && \
     mvn clean package -e
 
 WORKDIR /app
