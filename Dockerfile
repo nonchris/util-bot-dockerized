@@ -10,7 +10,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     maven && \
     git clone https://github.com/n1ck-i/util-bot.git /app && \
     cd /app && \
-    git checkout 1595700 && \
+    git checkout 884f703 && \
     mvn clean package -e -DskipTests
 
 WORKDIR /app
